@@ -2,6 +2,8 @@ version: "3.8"
 services:
   sdk:
     image: gcr.io/google.com/cloudsdktool/google-cloud-cli:latest
-    volumes:                                                                                         
+    working_dir: /root
+    volumes:
       - ./config:/root/.config
       - ./kube:/root/.kube
+      - ./manifests:/root/manifests:ro
